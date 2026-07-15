@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Một chút điều muốn nói với chị Ánh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app" aria-live="polite">
+      <div class="sparkles" aria-hidden="true"></div>
+
+      <section class="screen active intro" data-screen="intro">
+        <div class="flower" aria-label="Bông hoa nhỏ">🌷</div>
+        <p class="eyebrow">Gửi chị Ánh</p>
+        <h1>Em có vài điều<br />muốn hỏi chị...</h1>
+        <p class="subtitle">Những câu hỏi tiếp sau đây đều là về tình cảm.<br />Chị đã sẵn sàng tiếp tục chưa?</p>
+        <button class="primary" data-next="q1">Bắt đầu nhé <span>→</span></button>
+      </section>
+
+      <section class="screen question" data-screen="q1">
+        <div class="number">01 / 04</div>
+        <div class="mini-flower">🌼</div>
+        <h2>Chị có chắc chắn<br />muốn tiếp tục không?</h2>
+        <p>Đừng lo, đây là những câu hỏi rất dễ thôi ạ.</p>
+        <div class="choices">
+          <button class="choice" data-next="q2">Có</button>
+          <button class="choice" data-next="q2">Có</button>
+        </div>
+      </section>
+
+      <section class="screen question" data-screen="q2">
+        <div class="number">02 / 04</div>
+        <div class="mini-flower">💌</div>
+        <h2>Chị có cảm tình<br />với em không?</h2>
+        <p>Em hồi hộp quá nên cứ trả lời thật lòng nha chị.</p>
+        <div class="choices no-wrap">
+          <button class="choice" data-next="bridge">Có</button>
+          <button class="choice no-button" aria-label="Không">Không</button>
+        </div>
+      </section>
+
+      <section class="screen bridge" data-screen="bridge">
+        <div class="cute-art" aria-hidden="true">
+          <span class="cloud cloud-one">☁️</span><span class="cloud cloud-two">☁️</span>
+          <span class="bear">🧸</span><span class="heart">♡</span>
+        </div>
+        <h2>Hihi, còn muốn<br />tiếp tục không?</h2>
+        <button class="primary" data-next="q3">Tiếp tục <span>→</span></button>
+      </section>
+
+      <section class="screen question" data-screen="q3">
+        <div class="number">03 / 04</div>
+        <div class="mini-flower">✨</div>
+        <h2>Gu người yêu<br />của chị là như thế nào?</h2>
+        <p>Em có một linh cảm rất đáng yêu...</p>
+        <div class="choices">
+          <button class="choice" data-next="q4">Em</button>
+          <button class="choice" data-next="q4">Chắc chắn là em</button>
+        </div>
+      </section>
+
+      <section class="screen question" data-screen="q4">
+        <div class="number">04 / 04</div>
+        <div class="mini-flower">🌹</div>
+        <h2>Chị có muốn<br />hẹn hò với em không?</h2>
+        <p>Em sẽ rất vui nếu được làm điều đó cùng chị.</p>
+        <div class="choices no-wrap">
+          <button class="choice" data-next="final">Có</button>
+          <button class="choice no-button" aria-label="Không">Không</button>
+        </div>
+      </section>
+
+      <section class="screen finale" data-screen="final">
+        <div class="final-flower">💐</div>
+        <p class="eyebrow">Một lời nhắn nhỏ</p>
+        <h2>Cảm ơn chị Ánh<br />đã trả lời những câu hỏi của em</h2>
+        <p class="letter">Dù gặp nhau được một lần vào mùa hè năm đó, em đã có cảm tình và tương tư chị đến giờ. Em mong từ hôm nay mình sẽ có cơ hội tìm hiểu nhau hơn, cùng nhau tạo nên thật nhiều kỷ niệm đẹp và viết tiếp câu chuyện của mình.</p>
+        <p class="letter">Dù kết quả chị trả lời ra sao, em vẫn tôn trọng quyết định của chị. ♡</p>
+        <div class="signature">— từ em, với rất nhiều chân thành</div>
+        <div class="falling-hearts" aria-hidden="true"></div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
