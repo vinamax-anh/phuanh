@@ -9,12 +9,17 @@ document.querySelectorAll('[data-next]').forEach((button) => {
 
 document.querySelectorAll('.no-button').forEach((button) => {
   let lastMove = 0;
+  let previousX = -1;
   const dodge = () => {
     const area = button.closest('.no-wrap');
     const maxX = Math.max(0, area.clientWidth - button.offsetWidth);
     const maxY = 115;
     button.style.position = 'absolute';
-    button.style.left = `${Math.random() * maxX}px`;
+    let nextX = Math.random() * maxX;
+    // Keep each jump noticeable instead of landing almost where it was.
+    if (Math.abs(nextX - previousX) < maxX * .25) nextX = maxX - nextX;
+    previousX = nextX;
+    button.style.left = `${nextX}px`;
     button.style.top = `${Math.random() * maxY - 22}px`;
   };
   const dodgeWhenClose = (event) => {
@@ -31,6 +36,9 @@ document.querySelectorAll('.no-button').forEach((button) => {
   button.addEventListener('pointerdown', (event) => { event.preventDefault(); dodge(); });
   button.addEventListener('focus', dodge);
   document.addEventListener('pointermove', dodgeWhenClose);
+  window.setInterval(() => {
+    if (button.closest('.screen').classList.contains('active')) dodge();
+  }, 550);
 });
 
 const hearts = document.querySelector('.falling-hearts');
